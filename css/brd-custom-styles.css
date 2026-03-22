@@ -1,0 +1,382 @@
+/* ==========================================================================
+   BRD INVESTIGATIONS - MASTER STYLESHEET
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL ACCESSIBILITY & CONTRAST FIXES
+   -------------------------------------------------------------------------- */
+body, p, .post-body, .snippet-item, .entry-content {
+    color: #222222 !important; /* High contrast dark grey */
+}
+.header-widget p, .Header .description { 
+    color: #222222 !important; 
+    display: none !important; /* Force hide blog description */
+}
+.byline, .post-timestamp, .post-author, .post-labels a, .feed-message, .feed-subtitle, .post-header-container .byline, .post-header-container .byline a {
+    color: #444444 !important; /* Dark Grey for metadata */
+}
+.custom-footer-links a, .copyright, .image-attribution {
+    color: #444444 !important;
+    text-decoration: underline; 
+}
+.search-input input {
+    color: #000000 !important;
+}
+.search-input input::placeholder {
+    color: #333333 !important;
+    opacity: 1 !important;
+}
+.widget.Profile .profile-link, .widget.Profile .profile-data {
+    color: #222222 !important;
+}
+.blogger { display: none; }
+.custom-footer-links {
+    text-align: center;
+    margin-top: 15px;
+    padding-bottom: 20px;
+    font-size: 0.9em; 
+}
+.widget .title, .widget h2.title, .widget h3.title, .sidebar .widget .title {
+    display: none !important; /* Hide all widget titles */
+}
+.invisible-widget-root {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. SMART HEADER & NAVIGATION FIXES
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  #Header1 h1, #Header1 p, #Header1 div, #Header1 a, #Header1 span,
+  .header-widget h1, .header-widget p, .header-widget div, .header-widget a, .header-widget span {
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important; 
+    box-sizing: border-box !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 17px !important; 
+    font-weight: 900 !important;
+    line-height: 1.2em !important;
+    text-transform: uppercase !important;
+    color: #000000 !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    display: block !important;
+    padding: 10px 45px 5px 10px !important;
+    word-wrap: normal !important;
+    word-break: normal !important; 
+    white-space: normal !important;
+  }
+  
+  .header-widget .search-label, .header-widget .status-msg { display: none !important; }
+  
+  .header-widget {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    min-height: auto !important;
+    position: relative !important;
+  }
+
+  .header-drawer {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    z-index: 999 !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  #Header1::after {
+    content: "INDEPENDENT UK NEWS & RESEARCH"; 
+    display: block;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    color: #666; 
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee; 
+    margin-bottom: 5px;
+    padding-right: 40px; 
+  }
+
+  .header-widget::after, #Header1 h1::after, #Header1 p::after, #Header1 a::after, #Header1 span::after { 
+    display: none !important; 
+  }
+
+  body.scrolled-active #Header1 h1, body.scrolled-active #Header1 p, 
+  body.scrolled-active .header-widget h1, body.scrolled-active .header-widget p {
+    display: none !important;
+  }
+  
+  body.scrolled-active #Header1 a { 
+    display: block !important;
+    position: absolute !important;
+    top: 0; left: 0; width: 100%; height: 50px;
+    z-index: 20 !important; cursor: pointer;
+  }
+  
+  body.scrolled-active #Header1, body.scrolled-active .header-widget {
+    height: 50px !important; min-height: 0 !important; padding: 0 !important;
+    display: flex !important; align-items: center !important;
+    justify-content: flex-start !important; border-bottom: none !important;
+    position: relative !important; box-shadow: none !important; background-image: none !important;
+  }
+
+  body.scrolled-active #Header1::after {
+    content: "BRD INVESTIGATIONS";
+    visibility: visible; display: flex; align-items: center; justify-content: flex-start;
+    position: absolute; top: 0; left: 0; width: 100%; height: 50px; margin: 0; border: none;
+    font-family: Georgia, "Times New Roman", serif !important; font-size: 18px !important; 
+    font-weight: 700 !important; color: #000 !important; background-color: #fff; 
+    padding-left: 5px !important; z-index: 1; border-bottom: 1px solid #ddd;
+  }
+
+  #Header1, .header-widget, .header-drawer, .PageList, .main-header, .centered-top-container {
+    border: none !important; box-shadow: none !important;
+  }
+  .centered-top-container { background-image: none !important; }
+}
+
+@media (min-width: 481px) {
+  .Header h1, .Header p.title, .header-widget h1, .header-widget p, .header-widget div, .header-widget span,
+  #Header1 h1, #Header1 p, #Header1 div, #Header1 a, #Header1 span {
+    font-family: Georgia, "Times New Roman", serif !important; font-weight: 700 !important;
+    text-transform: uppercase !important; letter-spacing: 0.5px !important;
+    font-size: 26px !important; line-height: 1.2em !important; white-space: normal !important; 
+    color: #000000 !important; text-align: left !important; display: block !important;
+  }
+  .header-widget::after {
+    content: "INDEPENDENT UK NEWS & RESEARCH"; display: block;
+    font-family: Helvetica, Arial, sans-serif; font-size: 11px; color: #666; font-weight: 600;
+    letter-spacing: 2px; margin-top: 5px; text-align: left; 
+  }
+  .header-widget { height: auto !important; overflow: visible !important; }
+}
+
+/* BRD Menu Fix: Full Width Unlock */
+.centered-top-secondline {
+    width: 100vw !important; max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important; margin-right: calc(-50vw + 50%) !important;
+    padding: 0 10px !important; box-sizing: border-box !important;
+}
+.centered-top-secondline .PageList { width: 100% !important; max-width: 100% !important; }
+.centered-top-secondline .PageList li { margin-right: 2px !important; margin-left: 0 !important; }
+.centered-top-secondline .PageList li a {
+    padding: 10px 8px !important; font-size: 13px !important; font-weight: 600 !important; white-space: nowrap !important;
+}
+.centered-top-secondline .PageList ul { width: 100% !important; text-align: center !important; }
+
+/* --------------------------------------------------------------------------
+   3. DESKTOP & MOBILE REFINEMENTS (HERO, SEARCH, ICONS)
+   -------------------------------------------------------------------------- */
+.centered-top-firstline, .main_header_elements, .centered-top, .search-expand {
+    overflow: hidden !important; max-height: none !important; box-sizing: border-box !important;
+}
+.search-expand::-webkit-scrollbar { display: none !important; }
+.search-expand-text { display: none !important; }
+.search-expand-icon { display: flex !important; align-items: center !important; justify-content: center !important; visibility: visible !important; opacity: 1 !important; }
+
+body.sidebar-visible .hamburger-section, body.sidebar-visible .hamburger-menu,
+body.sidebar-visible .search, body.sidebar-visible .search-expand,
+body.sidebar-visible .svg-icon-24-button:not(.hamburger-menu) {
+    opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; transition: opacity 0.2s ease-in-out !important;
+}
+.search.focused .search-expand, .search-focused .search-expand {
+    display: none !important; opacity: 0 !important; visibility: hidden !important;
+}
+.centered-top-secondline { padding-right: 120px !important; }
+
+/* Chrome Mobile Fix & Search Bar Icons */
+.svg-icon-24-button, .hamburger-menu, .search-expand, .search-icon {
+    -webkit-transform: translateZ(0) !important; transform: translateZ(0) !important;
+    -webkit-backface-visibility: hidden !important; backface-visibility: hidden !important;
+    will-change: transform, opacity; z-index: 2147483647 !important; opacity: 1 !important;
+    visibility: visible !important; overflow: visible !important;
+}
+.svg-icon-24, .svg-icon-24 use {
+    fill: #000000 !important; color: #000000 !important; opacity: 1 !important; 
+    display: block !important; -webkit-transform: translateZ(0) !important;
+}
+.ripple { overflow: visible !important; }
+.hamburger-menu { opacity: unset !important; visibility: inherit !important; z-index: auto !important; position: static !important; }
+.svg-icon-24-button:not(.hamburger-menu) { opacity: 1 !important; visibility: visible !important; z-index: 99999 !important; }
+.svg-icon-24-button:not(.hamburger-menu) .svg-icon-24, .svg-icon-24-button:not(.hamburger-menu) use { fill: #000000 !important; color: #000000 !important; opacity: 1 !important; }
+
+/* Search Mode UI */
+.search-focused .Header h1, .search-focused #Header1 h1, .search-focused .blog-name, .search-focused .header-widget {
+    display: none !important; visibility: hidden !important; opacity: 0 !important; width: 0 !important;
+}
+.search-focused .search { width: 100% !important; max-width: 100% !important; display: flex !important; justify-content: center !important; align-items: center !important; }
+#Search1, .widget.Search, .search-form { background-color: #ffffff !important; z-index: 9999 !important; position: relative !important; }
+.search-input { background-color: #ffffff !important; color: #000000 !important; }
+
+@media screen and (max-width: 768px) {
+    .header-widget, .header-inner, .header-bar { display: block !important; height: auto !important; }
+    .Header h1, .Header .title, .Header { width: 100% !important; display: block !important; text-align: center !important; float: none !important; margin-bottom: 15px !important; }
+    .widget.Search { width: 100% !important; display: block !important; float: none !important; position: relative !important; top: auto !important; right: auto !important; left: auto !important; }
+    .search-input { width: 90% !important; margin: 0 auto !important; }
+}
+
+/* Desktop Hero Post */
+@media screen and (min-width: 800px) {
+    .heroPost { display: flex !important; flex-direction: column !important; }
+    .heroPost .big-post-image { display: none !important; }
+    .heroPost .big-post-image-top-container { display: block !important; width: 100% !important; max-height: 280px !important; overflow: hidden !important; }
+    .heroPost .big-post-image-top img { width: 100% !important; max-height: 280px !important; object-fit: cover !important; object-position: center !important; display: block !important; }
+    .heroPost .big-post-title, .heroPost .big-post-text { display: block !important; width: 100% !important; max-width: 100% !important; padding: 20px 5% !important; box-sizing: border-box !important; }
+    .heroPost .big-post-title h1, .heroPost .post-title, .heroPost .post-title a { font-size: 26px !important; line-height: 1.3 !important; margin-bottom: 12px !important; }
+    .heroPost .post-body, .heroPost .big-post-text, .heroPost .post-snippet, .heroPost .snippet-item, .heroPost .big-post-text .post-snippet-fade { font-size: 16px !important; line-height: 1.6 !important; }
+    .heroPost .big-post-text .snippet-item::first-letter { font-size: 16px !important; font-weight: normal !important; float: none !important; margin: 0 !important; }
+}
+.heroPost .big-post-title h1 { margin: 0 0 24px; font-size: 2em; line-height: 1.2em; }
+.heroPost .big-post-title h1 a { color: #ffffff !important; text-decoration: none; }
+
+/* --------------------------------------------------------------------------
+   4. ARTICLE TYPOGRAPHY, SPACING & IMAGES
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+  .post-title, h1.post-title, .post-title-entry { font-size: 24px !important; line-height: 1.2 !important; overflow-wrap: break-word; }
+}
+@media (max-width: 480px) {
+  .post-title-container, .post-header { padding-top: 18px !important; padding-bottom: 18px !important; margin-top: 0 !important; margin-bottom: 0 !important; }
+  iframe, object, embed { max-width: 100% !important; width: 100% !important; box-sizing: border-box !important; margin-left: 0 !important; margin-right: 0 !important; }
+  .post-body { overflow-x: hidden !important; width: 100% !important; }
+  .post-body img { max-width: 100% !important; height: auto !important; }
+}
+
+.post-thumbnail img, .entry-thumbnail img, .hero-image, .post-feat-img img, .snippet-thumbnail img {
+    height: auto !important; min-height: 0 !important; max-height: none !important; object-fit: contain !important; width: 100% !important;
+}
+.post-body .separator a, .post-body .separator img { margin-left: 0 !important; margin-right: 0 !important; max-width: 100% !important; height: auto !important; }
+.post-cover, .entry-cover { background-size: contain !important; background-repeat: no-repeat !important; height: auto !important; padding-bottom: 56.25%; }
+.post-outer .snippet-thumbnail { background-color: transparent !important; height: auto !important; min-height: 0 !important; display: block !important; }
+.post-outer .snippet-thumbnail img { width: 100% !important; height: auto !important; display: block !important; object-fit: unset !important; }
+
+/* Becca's Spacing Fixes */
+.brd-new-headline-section { padding-bottom: 5px !important; margin-bottom: 0 !important; }
+.post-header-container { padding-top: 0 !important; padding-bottom: 15px !important; margin-top: 0 !important; margin-bottom: 0 !important; min-height: 0 !important; }
+.post-body-container { margin-top: 0 !important; padding-top: 0 !important; }
+.post-header-container .byline { line-height: 1.4 !important; display: block !important; }
+
+/* Becca's Expand Desktop Width */
+@media screen and (min-width: 800px) {
+    body.item-view .Blog .post-body-container { padding-right: 0 !important; padding-inline-end: 0 !important; margin-left: auto !important; margin-right: auto !important; margin-inline-start: auto !important; max-width: 850px !important; }
+    body.item-view .Blog .post-body { margin-right: 0 !important; margin-inline-end: 0 !important; padding: 0 !important; }
+    body.item-view .Blog .post-header-container { max-width: 850px !important; margin: 0 auto !important; padding-left: 0 !important; padding-inline-start: 0 !important; }
+}
+
+/* BRD Headline Mover Formatting */
+.brd-new-headline-section { padding: 20px 24px 10px 24px !important; margin: 0 auto !important; max-width: 100% !important; text-align: left !important; background: transparent !important; }
+.brd-new-headline-section .post-title, .brd-new-headline-section .post-title a { color: #000000 !important; font-family: Georgia, "Times New Roman", serif !important; font-size: 32px !important; font-weight: 700 !important; line-height: 1.2 !important; text-transform: none !important; text-decoration: none !important; margin: 0 !important; }
+.post-header-container { padding: 0 24px 20px 24px !important; background: transparent !important; margin-top: 5px !important; border: none !important; }
+.post-header-container .byline, .post-header-container .byline a { color: #555555 !important; font-size: 14px !important; font-style: italic !important; }
+@media screen and (max-width: 768px) { .brd-new-headline-section .post-title { font-size: 26px !important; } }
+
+/* --------------------------------------------------------------------------
+   5. BRD TOOLTIP
+   -------------------------------------------------------------------------- */
+.brd-tooltip { position: relative; display: inline-block; border-bottom: 1px dotted #0047AB; color: #0047AB; cursor: pointer; font-weight: bold; }
+.brd-tooltip .tooltip-text {
+  visibility: hidden; background-color: #333; color: #fff; text-align: center; border-radius: 6px; padding: 10px;
+  font-weight: normal; font-size: 14px; width: 250px; position: absolute; z-index: 9999; bottom: 135%; left: 50%;
+  margin-left: -125px; opacity: 0; transition: opacity 0.3s; box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+.brd-tooltip .tooltip-text::after {
+  content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #333 transparent transparent transparent;
+}
+.brd-tooltip:hover .tooltip-text, .brd-tooltip:focus .tooltip-text, .brd-tooltip:active .tooltip-text { visibility: visible; opacity: 1; }
+.brd-tooltip .tooltip-text a { color: #4da6ff; text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .brd-tooltip { position: static !important; }
+  .brd-tooltip .tooltip-text { position: absolute !important; left: 10px !important; right: 10px !important; width: auto !important; margin-left: 0 !important; transform: none !important; bottom: auto !important; margin-top: -180px !important; z-index: 99999 !important; }
+  .brd-tooltip .tooltip-text::after { display: none !important; }
+}
+
+/* --------------------------------------------------------------------------
+   6. BUTTONS & WIDGETS (SIDEBAR, DONATE, SHARE)
+   -------------------------------------------------------------------------- */
+.sidebar .widget, .section .widget { border-bottom: none !important; border-top: none !important; box-shadow: none !important; margin-bottom: 10px !important; }
+
+/* Info / Utility Buttons */
+.info-btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 5px; text-decoration: none; font-family: Georgia, "Times New Roman", serif; font-weight: bold; font-size: 14px; box-sizing: border-box; transition: opacity 0.3s; background-color: #0047AB; color: white !important; border: 1px solid #003380; }
+.info-btn:hover { opacity: 0.9; background-color: #003380; text-decoration: none !important; }
+.info-btn i { margin-right: 10px; font-size: 16px; }
+
+/* Social Buttons */
+.social-btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 5px; text-decoration: none; font-family: sans-serif; font-weight: bold; font-size: 14px; box-sizing: border-box; transition: opacity 0.3s; }
+.social-btn:hover { opacity: 0.8; }
+.social-btn i { margin-right: 10px; font-size: 18px; }
+.fb { background-color: #1877F2; color: white; }
+.x-twitter { background-color: #000000; color: white; }
+.yt { background-color: #FF0000; color: white; }
+.email { background-color: #333333; color: white; }
+
+/* Donate Buttons */
+.brd-donate-btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; text-decoration: none; font-family: Georgia, "Times New Roman", serif; font-weight: bold; font-size: 15px; box-sizing: border-box; transition: opacity 0.3s; background-color: #FFC439; color: #000000 !important; border: 1px solid #CC9A22; }
+.brd-donate-btn:hover { opacity: 0.9; text-decoration: none !important; }
+.brd-donate-btn i { margin-right: 10px; font-size: 18px; color: #003087; }
+
+/* Google Contribute Button */
+button.swg-button-v2-light { width: 100% !important; background-color: #4285F4 !important; color: #ffffff !important; border: none !important; border-radius: 4px !important; padding: 12px 0 !important; font-family: inherit !important; font-weight: 700 !important; font-size: 15px !important; box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important; cursor: pointer !important; display: flex !important; justify-content: center !important; align-items: center !important; margin-bottom: 10px !important; }
+.swg-button-v2-icon-light { background-color: #ffffff !important; border-radius: 50% !important; width: 24px !important; height: 24px !important; margin-right: 10px !important; background-size: 14px !important; background-position: center !important; }
+@media screen and (max-width: 768px) {
+    iframe[src*="contributor.google.com"], iframe[src*="google.com"][style*="position: fixed"] { top: 15px !important; bottom: auto !important; left: 50% !important; transform: translateX(-50%) !important; max-height: 90vh !important; height: auto !important; width: 95vw !important; z-index: 2147483647 !important; }
+}
+
+/* Install App Sidebar Button */
+#sidebar-install-box { display: none; background: #000000; color: white; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: transform 0.2s; }
+#sidebar-install-box:active { transform: scale(0.98); }
+.sidebar-btn-title { font-weight: bold; font-size: 16px; margin-bottom: 5px; display: block; }
+.sidebar-btn-sub { font-size: 12px; opacity: 0.9; }
+#sidebar-ios-guide { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.9); z-index: 10000; color: white; text-align: center; padding-top: 30vh; font-family: sans-serif; }
+.ios-arrow { font-size: 40px; display: block; margin-top: 20px; animation: bounce 1s infinite; }
+
+/* Text to Speech Button */
+#brd-tts-btn { display: inline-flex; align-items: center; justify-content: center; background-color: #0047AB; color: #ffffff; border: 1px solid #003380; padding: 12px 24px; font-family: Georgia, "Times New Roman", serif; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; margin-bottom: 25px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.15); width: 100%; max-width: 300px; }
+#brd-tts-btn:hover { background-color: #003380; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+#brd-tts-btn i { margin-right: 10px; font-size: 20px; }
+.brd-tts-gadget-hide { display: none !important; height: 0 !important; width: 0 !important; margin: 0 !important; padding: 0 !important; border: none !important; }
+
+/* AI Button Style */
+.ai-menu-btn { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); color: white; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-family: sans-serif; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4); transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); }
+.ai-menu-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6); filter: brightness(1.1); }
+.lc-1zs205.e13tedl74 { display: none !important; opacity: 0 !important; visibility: hidden !important; height: 0 !important; }
+
+/* Floating Search Box */
+#brd-floating-search-results { position: absolute; z-index: 2147483647 !important; background-color: #ffffff; border: 1px solid #ddd; border-top: none; box-shadow: 0 10px 40px rgba(0,0,0,0.4); border-radius: 0 0 8px 8px; display: none; font-family: 'Open Sans', sans-serif; overflow: hidden; }
+.brd-search-item { padding: 12px 15px; cursor: pointer; border-bottom: 1px solid #f0f0f0; color: #333; font-size: 14px; background: #fff; transition: background 0.2s; }
+.brd-search-item:hover { background-color: #f5f5f5; color: #000; border-left: 4px solid #25a186; padding-left: 11px; }
+@media screen and (max-width: 768px) { #brd-floating-search-results { max-height: 50vh; overflow-y: auto; } }
+
+/* Footer Donate Popup */
+#brd-donate-popup { position: fixed; bottom: 30px; right: 30px; width: 340px; background-color: #0f172a; color: #ffffff; border-radius: 12px; padding: 24px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); z-index: 99999; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; border: 1px solid #1e293b; display: none; animation: brdSlideUp 0.6s ease-out forwards; }
+.brd-header h3 { margin: 8px 0; font-size: 20px; font-weight: 700; color: #ffffff !important; }
+#brd-donate-popup p { font-size: 15px; line-height: 1.5; color: #f4f4f7 !important; margin-bottom: 20px; }
+.brd-badge { background: #38bdf8; color: #0f172a; font-size: 11px; font-weight: 800; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; }
+.brd-main-btn { display: block; background: #38bdf8; color: #0f172a !important; text-align: center; padding: 12px; border-radius: 6px; text-decoration: none !important; font-weight: bold; font-size: 16px; transition: all 0.2s ease-in-out; }
+.brd-main-btn:hover { background: #ffffff; color: #0f172a !important; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(56, 189, 248, 0.4); }
+#close-donate-popup { position: absolute; top: 12px; right: 12px; background: transparent; border: none; color: #94a3b8; width: 28px; height: 28px; font-size: 18px; cursor: pointer; transition: color 0.2s; }
+#close-donate-popup:hover { color: #ffffff; }
+@keyframes brdSlideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@media (max-width: 480px) { #brd-donate-popup { right: 15px; left: 15px; bottom: 15px; width: auto; } }
+
+/* Desktop Share Button Cleanup */
+@media screen and (min-width: 800px) {
+    .post-share-buttons { position: relative !important; display: flex !important; justify-content: center !important; width: 100% !important; max-width: 850px !important; margin: 30px auto !important; clear: both !important; z-index: 10 !important; }
+    .share-buttons-container ul.hidden { display: none !important; }
+    .share-buttons-container ul:not(.hidden) { display: block !important; position: absolute !important; bottom: 100% !important; left: 50% !important; transform: translateX(-50%) !important; background: #ffffff !important; border: 1px solid #e0e0e0 !important; box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; border-radius: 8px !important; padding: 10px 0 !important; margin-bottom: 10px !important; z-index: 100 !important; min-width: 200px !important; }
+    .share-buttons-container ul li { display: block !important; text-align: left !important; width: 100% !important; }
+    .post-share-buttons-top { display: none !important; visibility: hidden !important; opacity: 0 !important; height: 0 !important; width: 0 !important; pointer-events: none !important; }
+    .post-sidebar, .post-labels-sidebar { display: none !important; visibility: hidden !important; opacity: 0 !important; width: 0 !important; height: 0 !important; pointer-events: none !important; }
+}
