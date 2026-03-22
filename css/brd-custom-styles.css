@@ -48,12 +48,17 @@ body, p, .post-body, .snippet-item, .entry-content {
     border: none !important;
 }
 
+
 /* --------------------------------------------------------------------------
-   2. SMART HEADER & NAVIGATION FIXES
+   2. SMART HEADER & NAVIGATION FIXES (FULLY OPTIMISED)
    -------------------------------------------------------------------------- */
+
+/* --- MOBILE DEVICES --- */
 @media (max-width: 480px) {
-  #Header1 h1, #Header1 p, #Header1 div, #Header1 a, #Header1 span,
-  .header-widget h1, .header-widget p, .header-widget div, .header-widget a, .header-widget span {
+  
+  /* 1. Target only the main title to prevent hiding the description later */
+  #Header1 h1, #Header1 a, 
+  .header-widget h1, .header-widget a {
     visibility: visible !important;
     position: static !important;
     width: 100% !important; 
@@ -74,8 +79,12 @@ body, p, .post-body, .snippet-item, .entry-content {
     white-space: normal !important;
   }
   
-  .header-widget .search-label, .header-widget .status-msg { display: none !important; }
+  /* 2. Hide Blogger's default junk */
+  .header-widget .search-label, .header-widget .status-msg { 
+      display: none !important; 
+  }
   
+  /* 3. Reset Header Spacing */
   .header-widget {
     padding: 0 !important;
     margin: 0 !important;
@@ -94,6 +103,7 @@ body, p, .post-body, .snippet-item, .entry-content {
     align-items: center !important;
   }
 
+  /* 4. Subtitle Injection */
   #Header1::after {
     content: "INDEPENDENT UK NEWS & RESEARCH"; 
     display: block;
@@ -109,12 +119,13 @@ body, p, .post-body, .snippet-item, .entry-content {
     padding-right: 40px; 
   }
 
-  .header-widget::after, #Header1 h1::after, #Header1 p::after, #Header1 a::after, #Header1 span::after { 
+  .header-widget::after, #Header1 h1::after { 
     display: none !important; 
   }
 
-  body.scrolled-active #Header1 h1, body.scrolled-active #Header1 p, 
-  body.scrolled-active .header-widget h1, body.scrolled-active .header-widget p {
+  /* 5. Sticky Header Behaviour */
+  body.scrolled-active #Header1 h1, 
+  body.scrolled-active .header-widget h1 {
     display: none !important;
   }
   
@@ -147,36 +158,59 @@ body, p, .post-body, .snippet-item, .entry-content {
   .centered-top-container { background-image: none !important; }
 }
 
+/* --- DESKTOP & TABLET DEVICES --- */
 @media (min-width: 481px) {
-  .Header h1, .Header p.title, .header-widget h1, .header-widget div, .header-widget span,
-  #Header1 h1, #Header1 div, #Header1 a, #Header1 span {
-    font-family: Georgia, "Times New Roman", serif !important; font-weight: 700 !important;
-    text-transform: uppercase !important; letter-spacing: 0.5px !important;
-    font-size: 26px !important; line-height: 1.2em !important; white-space: normal !important; 
-    color: #000000 !important; text-align: left !important; display: block !important;
+  
+  /* 1. Target only the main title */
+  .Header h1, .header-widget h1, #Header1 h1, #Header1 a {
+    font-family: Georgia, "Times New Roman", serif !important; 
+    font-weight: 700 !important;
+    text-transform: uppercase !important; 
+    letter-spacing: 0.5px !important;
+    font-size: 26px !important; 
+    line-height: 1.2em !important; 
+    white-space: normal !important; 
+    color: #000000 !important; 
+    text-align: left !important; 
+    display: block !important;
   }
   
+  /* 2. Ensure Blogger description stays hidden */
   #Header1 p, .header-widget p, .header-widget .description {
     display: none !important;
   }
+  
+  /* 3. Subtitle Injection */
   .header-widget::after {
-    content: "INDEPENDENT UK NEWS & RESEARCH"; display: block;
-    font-family: Helvetica, Arial, sans-serif; font-size: 11px; color: #666; font-weight: 600;
-    letter-spacing: 2px; margin-top: 5px; text-align: left; 
+    content: "INDEPENDENT UK NEWS & RESEARCH"; 
+    display: block;
+    font-family: Helvetica, Arial, sans-serif; 
+    font-size: 11px; 
+    color: #666; 
+    font-weight: 600;
+    letter-spacing: 2px; 
+    margin-top: 5px; 
+    text-align: left; 
   }
   .header-widget { height: auto !important; overflow: visible !important; }
 }
 
-/* BRD Menu Fix: Full Width Unlock */
+/* --- BRD MENU FIX: FULL WIDTH UNLOCK --- */
 .centered-top-secondline {
-    width: 100vw !important; max-width: 100vw !important;
-    margin-left: calc(-50vw + 50%) !important; margin-right: calc(-50vw + 50%) !important;
-    padding: 0 10px !important; box-sizing: border-box !important;
+    width: 100vw !important; 
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important; 
+    margin-right: calc(-50vw + 50%) !important;
+    padding: 0 10px !important; 
+    box-sizing: border-box !important;
 }
 .centered-top-secondline .PageList { width: 100% !important; max-width: 100% !important; }
 .centered-top-secondline .PageList li { margin-right: 2px !important; margin-left: 0 !important; }
 .centered-top-secondline .PageList li a {
-    padding: 10px 8px !important; font-size: 13px !important; font-weight: 600 !important; white-space: nowrap !important;
+    padding: 10px 8px !important; 
+    font-size: 13px !important; 
+    font-weight: 600 !important; 
+    white-space: nowrap !important;
 }
 .centered-top-secondline .PageList ul { width: 100% !important; text-align: center !important; }
 
