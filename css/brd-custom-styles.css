@@ -148,12 +148,16 @@ body, p, .post-body, .snippet-item, .entry-content {
 }
 
 @media (min-width: 481px) {
-  .Header h1, .Header p.title, .header-widget h1, .header-widget p, .header-widget div, .header-widget span,
-  #Header1 h1, #Header1 p, #Header1 div, #Header1 a, #Header1 span {
+  .Header h1, .Header p.title, .header-widget h1, .header-widget div, .header-widget span,
+  #Header1 h1, #Header1 div, #Header1 a, #Header1 span {
     font-family: Georgia, "Times New Roman", serif !important; font-weight: 700 !important;
     text-transform: uppercase !important; letter-spacing: 0.5px !important;
     font-size: 26px !important; line-height: 1.2em !important; white-space: normal !important; 
     color: #000000 !important; text-align: left !important; display: block !important;
+  }
+  
+  #Header1 p, .header-widget p, .header-widget .description {
+    display: none !important;
   }
   .header-widget::after {
     content: "INDEPENDENT UK NEWS & RESEARCH"; display: block;
