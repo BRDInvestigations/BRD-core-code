@@ -380,3 +380,28 @@ button.swg-button-v2-light { width: 100% !important; background-color: #4285F4 !
     .post-share-buttons-top { display: none !important; visibility: hidden !important; opacity: 0 !important; height: 0 !important; width: 0 !important; pointer-events: none !important; }
     .post-sidebar, .post-labels-sidebar { display: none !important; visibility: hidden !important; opacity: 0 !important; width: 0 !important; height: 0 !important; pointer-events: none !important; }
 }
+
+/* ==========================================================================
+   FORCE HIDE BLOG DESCRIPTION (ALL DEVICES)
+   ========================================================================== */
+.header-widget p, 
+.header-widget .description, 
+.Header .description, 
+#Header1 .description,
+#Header1 p,
+#Header1 div.description,
+.header-widget div.description {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Safety Catch to ensure the title isn't accidentally hidden */
+#Header1 span:not(.title) {
+    display: none !important;
+}
