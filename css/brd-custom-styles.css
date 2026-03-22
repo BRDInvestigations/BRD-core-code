@@ -382,26 +382,20 @@ button.swg-button-v2-light { width: 100% !important; background-color: #4285F4 !
 }
 
 /* ==========================================================================
-   FORCE HIDE BLOG DESCRIPTION (ALL DEVICES)
+   ULTIMATE DESCRIPTION HIDER (OVERRIDING ALL MEDIA QUERIES)
    ========================================================================== */
-.header-widget p, 
-.header-widget .description, 
-.Header .description, 
-#Header1 .description,
-#Header1 p,
-#Header1 div.description,
-.header-widget div.description {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-  width: 0 !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Safety Catch to ensure the title isn't accidentally hidden */
-#Header1 span:not(.title) {
+html body header.centered-top-container #Header1 .header-widget p,
+html body header.centered-top-container #Header1 .header-widget .description,
+html body header.centered-top-container #Header1 div.description {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    position: absolute !important;
 }
